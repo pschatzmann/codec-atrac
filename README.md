@@ -14,6 +14,13 @@ decoders from [FFmpeg](https://ffmpeg.org/).
 Container parsing (WAV, OMA, AEA, ...) is **not** included: you pass the stream parameters and
 one frame at a time.
 
+> **Recommended:** use this library together with
+> [arduino-audio-tools](https://github.com/pschatzmann/arduino-audio-tools). It provides
+> `DecoderATRAC` on top of this library, plus the matching containers (`.at3`/`.at9` WAV files,
+> `.oma`/`.aa3` and `.aea`) which parse the headers, configure the decoder and pass on the frames,
+> and it connects the decoded audio to I2S, files, streams and many other sources and sinks. You
+> then don't have to write any header parsing yourself.
+
 ## Usage
 
 ```cpp
